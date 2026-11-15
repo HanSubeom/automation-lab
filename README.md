@@ -11,3 +11,6 @@ I do not commit code I cannot explain line by line.
 
 ## Log
 - 2026-11-14: Fresh start.
+
+## Ideas (later)
+- Multi-agent stock debate report (review after 2027-03)
