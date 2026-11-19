@@ -1,9 +1,13 @@
-# Day 2: read the eCampus calender file and print it
+#Day3: print only the assignment title lines
 
 file_path = "data/icalexport.ics"
 
 with open(file_path, encoding="utf-8") as file:
     content = file.read()
 
-print(content)
-print("Characters:", len(content))
+lines = content.splitlines()
+print("Total lines:", len(lines))
+
+for line in lines:
+    if line.startswith("SUMMARY:"):
+        print(line)
