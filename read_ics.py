@@ -16,3 +16,12 @@ for line in lines:
         count = count + 1
 
 print("Assignments:", count)
+
+count = 0
+
+for line in lines:
+    if line.startswith("DTSTART"):
+        print(line)
+        count = count + 1
+
+print("Dates:", count)
