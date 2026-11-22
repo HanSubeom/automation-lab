@@ -1,27 +1,22 @@
-#Day3: print only the assignment title lines
+# Day 4: build the assignment list from the calendar file
 
 file_path = "data/icalexport.ics"
+prefix = "SUMMARY:"
 
 with open(file_path, encoding="utf-8") as file:
     content = file.read()
 
 lines = content.splitlines()
-print("Total lines:", len(lines))
 
-count = 0
-
-for line in lines:
-    if line.startswith("SUMMARY:"):
-        print(line)
-        count = count + 1
-
-print("Assignments:", count)
-
-count = 0
+assignments = []
 
 for line in lines:
-    if line.startswith("DTSTART"):
-        print(line)
-        count = count + 1
+    if line.startswith(prefix):
+        title = line[len(prefix):]
+        assignments.append(title)
 
-print("Dates:", count)
+print("My assignments:")
+for assignment in assignments:
+    print("-", assignment)
+
+print("Total:", len(assignments))
